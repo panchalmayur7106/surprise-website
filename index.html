@@ -1,58 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Just Something Honest</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Someone Special</title>
+    <link rel="stylesheet" href="valentine.css">
 </head>
 <body>
-
-  <div class="viewport" id="viewport">
-    <div class="card" id="card">
-      <p class="text active">
-        Sometimes,<br>
-        a simple moment of curiosity<br>
-        changes the way a day feels.
-      </p>
-
-      <p class="text">
-        I didn’t plan this like a speech,<br>
-        or rehearse the words in my head.<br><br>
-        I just let honesty<br>
-        find a quiet place to exist.
-      </p>
-
-      <p class="text">
-        You have this rare way<br>
-        of making ordinary moments<br>
-        feel unexpectedly gentle.<br><br>
-        Like calm, without effort.
-      </p>
-
-      <p class="text">
-        I don’t know when it started,<br>
-        but somewhere between conversations<br>
-        and silences,<br>
-        you began to matter differently.
-      </p>
-
-      <p class="text">
-        So before this day passes,<br>
-        before courage changes its mind,<br>
-        there’s something I wish to ask —<br>
-        simply, sincerely.
-      </p>
-
-      <p class="text final">
-        This Valentine’s Day,<br>
-        would you like to be<br>
-        my life-long Valentine?<br><br>
-        <span class="soft">Take your time. This question isn’t in a hurry.</span>
-      </p>
+    <!-- Stage 1: Initial Dark Screen with Hearts -->
+    <div class="stage active" id="stage1">
+        <div class="hearts-bg"></div>
+        <div class="content">
+            <p class="intro-text fade-in">कुछ खास है...</p>
+            <p class="tap-hint">Tap anywhere</p>
+        </div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <!-- Stage 2: First Shayari -->
+    <div class="stage" id="stage2">
+        <div class="floating-particles"></div>
+        <div class="content">
+            <p class="shayari line-1">तुम्हारी आवाज़ में वो मिठास है,</p>
+            <p class="shayari line-2">जिसे सुनने की हर पल तलाश है।</p>
+            <p class="shayari line-3">पहली बार जब सुना था तुम्हें,</p>
+            <p class="shayari line-4">दिल ने कहा, बस यही एहसास है।</p>
+        </div>
+    </div>
+
+    <!-- Stage 3: Connection -->
+    <div class="stage" id="stage3">
+        <div class="floating-particles"></div>
+        <div class="content">
+            <p class="shayari line-1">मिले नहीं कभी, फिर भी है रिश्ता अजीब,</p>
+            <p class="shayari line-2">रूह से रूह का है ये नसीब।</p>
+            <p class="shayari line-3">तुम्हारी बातें, तुम्हारे अल्फ़ाज़,</p>
+            <p class="shayari line-4">मेरे लिए हैं सबसे करीब।</p>
+        </div>
+    </div>
+
+    <!-- Stage 4: Your Importance -->
+    <div class="stage" id="stage4">
+        <div class="floating-particles"></div>
+        <div class="content">
+            <p class="shayari line-1">दुनिया में बहुत हैं लोग यहाँ,</p>
+            <p class="shayari line-2">पर दिल ने चुना सिर्फ तुम्हें, Madad ji।</p>
+            <p class="shayari line-3">तुम्हारे शब्दों में है वो असर,</p>
+            <p class="shayari line-4">जो बदल दे मेरी हर सुबह को हसीं।</p>
+        </div>
+    </div>
+
+    <!-- Stage 5: The Feeling -->
+    <div class="stage" id="stage5">
+        <div class="floating-particles"></div>
+        <div class="content">
+            <p class="shayari line-1">सोचता हूँ हर वक्त बस तुम्हारे बारे में,</p>
+            <p class="shayari line-2">खुशियों की वजह हो जैसे तुम मेरे प्यारे में।</p>
+            <p class="shayari line-3">न जाने क्यों, पर ये दिल कहता है,</p>
+            <p class="shayari line-4">तुम हो वो जो पूरा करे मेरे सपनों के नारे में।</p>
+        </div>
+    </div>
+
+    <!-- Stage 6: The Question -->
+    <div class="stage" id="stage6">
+        <div class="floating-particles"></div>
+        <div class="content final-stage">
+            <div class="sparkle-container">
+                <span class="sparkle">✦</span>
+                <span class="sparkle">✦</span>
+                <span class="sparkle">✦</span>
+            </div>
+            <p class="question-text">तो Madad ji,</p>
+            <p class="main-question">Will you be my</p>
+            <p class="main-question highlight">Lifelong Valentine?</p>
+            <div class="heart-pulse">♥</div>
+        </div>
+    </div>
+
+    <script src="valentine.js"></script>
 </body>
 </html>

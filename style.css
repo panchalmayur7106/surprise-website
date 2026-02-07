@@ -1,56 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background: linear-gradient(160deg, #2b1d2f, #1a1f33);
-  font-family: "Georgia", "Times New Roman", serif;
-  color: #f3f0f5;
-  min-height: 100svh;
-  overflow-y: auto;
+    font-family: 'Cormorant Garamond', 'Crimson Text', serif;
+    background: linear-gradient(135deg, #1a0a1f 0%, #2d1b3d 50%, #1a0a1f 100%);
+    color: #ffd6e8;
+    overflow: hidden;
+    height: 100vh;
+    cursor: pointer;
 }
 
-/* Scroll-safe viewport */
-.viewport {
-  min-height: 100svh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
+.stage {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
 }
 
-/* Desktop-sized poetic card */
-.card {
-  max-width: 720px;
-  width: 100%;
-  text-align: center;
-  padding: 40px 30px;
+.stage.active {
+    display: flex;
+    opacity: 1;
 }
 
-/* Text blocks */
-.text {
-  display: none;
-  font-size: 1.3rem;
-  line-height: 1.9;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+.content {
+    text-align: center;
+    padding: 30px;
+    max-width: 90%;
+    position: relative;
+    z-index: 10;
 }
 
-.text.active {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
+/* ========== STAGE 1: Initial Screen ========== */
+.hearts-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-.text.final {
-  font-size: 1.35rem;
+.hearts-bg::before,
+.hearts-bg::after {
+    content: '♥';
+    position: absolute;
+    font-size: 100px;
+    color: rgba(255, 107, 157, 0.15);
+    animation: floatHeart 8s infinite ease-in-out;
 }
 
-.soft {
-  font-size: 0.95rem;
-  opacity: 0.75;
+.hearts-bg::before {
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
 }
 
+.hearts-bg::after {
+    bottom: 30%;
+    right: 20%;
+    animation-delay: 2s;
+}
+
+@keyframes floatHeart {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.1;
+    }
+    50% {
+        transform: translateY(-30px) scale(1.1);
+        opacity: 0.2;
+    }
+}
+
+.intro-text {
+    font-size: 48px;
+    font-weight: 300;
+    letter-spacing: 8px;
+    font-style: italic;
+    color: #ffb3d9;
+    text-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+}
+
+.tap-hint {
+    font-size: 18px;
+    margin-top: 40px;
+    color: rgba(255, 179, 217, 0.6);
+    animation: pulse 2s infinite;
+    letter-spacing: 3px;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== FLOATING PARTICLES ========== */
+.floating-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.floating-particles::before,
+.floating-particles::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, #ffb3d9 0%, transparent 70%);
+    border-radius: 50%;
+    animation: particleFloat 10s infinite linear;
+}
+
+.floating-particles::before {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.floating-particles::after {
+    top: 60%;
+    right: 25%;
+    animation-delay: 3s;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(100px, -500px) scale(0.3);
+        opacity: 0;
+    }
+}
+
+/* ========== SHAYARI STYLING ========== */
+.shayari {
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1.8;
+    margin: 15px 0;
+    opacity: 0;
+    font-style: italic;
+    letter-spacing: 1.5px;
+    color: #ffd6e8;
+    text-shadow: 0 2px 10px rgba(255, 107, 157, 0.3);
+}
+
+/* Poetic font effect - elongated characters */
+.shayari::first-letter {
+    font-size: 1.4em;
+    color: #ff9ec9;
+    font-weight: 400;
+}
+
+.line-1 {
+    animation: lineAppear 1s ease 0.3s forwards;
+}
+
+.line-2 {
+    animation: lineAppear 1s ease 0.8s forwards;
+}
+
+.line-3 {
+    animation: lineAppear 1s ease 1.3s forwards;
+}
+
+.line-4 {
+    animation: lineAppear 1s ease 1.8s forwards;
+}
+
+@keyframes lineAppear {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+/* ========== FINAL STAGE ========== */
+.final-stage {
+    padding: 40px 20px;
+}
+
+.sparkle-container {
+    margin-bottom: 30px;
+}
+
+.sparkle {
+    display: inline-block;
+    font-size: 24px;
+    color: #ffd6e8;
+    margin: 0 15px;
+    animation: sparkleRotate 3s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+.sparkle:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.sparkle:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes sparkleRotate {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: rotate(180deg) scale(1.3);
+        opacity: 1;
+    }
+}
+
+.question-text {
+    font-size: 32px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #ffb3d9;
+    opacity: 0;
+    animation: fadeIn 1.5s ease 0.5s forwards;
+}
+
+.main-question {
+    font-size: 36px;
+    margin: 15px 0;
+    font-weight: 400;
+    letter-spacing: 3px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease 1s forwards;
+}
+
+.main-question.highlight {
+    font-size: 44px;
+    font-weight: 600;
+    color: #ff9ec9;
+    text-shadow: 0 0 30px rgba(255, 107, 157, 0.6);
+    animation: fadeIn 1.5s ease 1.5s forwards, glow 2s infinite ease-in-out 3s;
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(255, 107, 157, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 40px rgba(255, 107, 157, 0.9), 0 0 60px rgba(255, 107, 157, 0.5);
+    }
+}
+
+.heart-pulse {
+    font-size: 80px;
+    color: #ff6b9d;
+    margin-top: 40px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease 2s forwards, heartbeat 1.5s infinite ease-in-out 3.5s;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.15);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.05);
+    }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+    .intro-text {
+        font-size: 36px;
+        letter-spacing: 6px;
+    }
+
+    .shayari {
+        font-size: 22px;
+        margin: 12px 0;
+    }
+
+    .question-text {
+        font-size: 26px;
+    }
+
+    .main-question {
+        font-size: 30px;
+    }
+
+    .main-question.highlight {
+        font-size: 36px;
+    }
+
+    .heart-pulse {
+        font-size: 60px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-text {
+        font-size: 32px;
+        letter-spacing: 4px;
+    }
+
+    .shayari {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+
+    .question-text {
+        font-size: 24px;
+    }
+
+    .main-question {
+        font-size: 26px;
+    }
+
+    .main-question.highlight {
+        font-size: 32px;
+    }
+}
+
+/* ========== ADDITIONAL ROMANTIC EFFECTS ========== */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 107, 157, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(196, 69, 105, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Smooth scrolling on mobile if needed */
+@media (max-height: 700px) {
+    .stage {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .content {
+        padding: 60px 20px;
+    }
+}
+
+/* Touch feedback */
+.stage:active {
+    opacity: 0.95;
+}
