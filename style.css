@@ -21,7 +21,7 @@ body {
     overflow: hidden;
 }
 
-/* Hearts animation */
+/* ========== HEARTS ANIMATION ========== */
 .hearts-container {
     position: absolute;
     top: 0;
@@ -57,7 +57,7 @@ body {
     }
 }
 
-/* Screen transitions */
+/* ========== SCREEN TRANSITIONS ========== */
 .screen {
     position: absolute;
     top: 0;
@@ -71,13 +71,14 @@ body {
     opacity: 0;
     transition: opacity 1s ease-in-out;
     z-index: 2;
+    padding: 20px;
 }
 
 .screen.active {
     opacity: 1;
 }
 
-/* Panda Design */
+/* ========== SCREEN 1: PANDA ========== */
 .panda-container {
     margin-bottom: 50px;
     animation: bounce 2s infinite;
@@ -183,13 +184,13 @@ body {
     left: 55px;
 }
 
-/* Loading text */
 .loading-text {
     color: #b968c7;
     font-size: 28px;
     text-align: center;
     animation: pulse 1.5s infinite;
     text-shadow: 0 0 20px rgba(185, 104, 199, 0.5);
+    margin-bottom: 20px;
 }
 
 @keyframes pulse {
@@ -203,7 +204,440 @@ body {
     }
 }
 
-/* Teddy Bear Section */
+.loading-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.loading-dots span {
+    width: 15px;
+    height: 15px;
+    background: #b968c7;
+    border-radius: 50%;
+    animation: dotPulse 1.5s infinite;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.loading-dots span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes dotPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+}
+
+/* ========== SCREEN 2: CAT IN BOX ========== */
+.card {
+    background: rgba(139, 69, 152, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+    border: 2px solid rgba(185, 104, 199, 0.3);
+}
+
+.cat-box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 30px;
+}
+
+.box {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 100px;
+    background: linear-gradient(135deg, #8b5a9e 0%, #6d4a7e 100%);
+    border-radius: 10px;
+    border: 3px solid #b968c7;
+}
+
+.cat {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: catPeek 2s ease-in-out infinite;
+}
+
+@keyframes catPeek {
+    0%, 100% {
+        bottom: 80px;
+    }
+    50% {
+        bottom: 95px;
+    }
+}
+
+.cat-head {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.cat-ear {
+    position: absolute;
+    width: 25px;
+    height: 30px;
+    background: #f5e6d3;
+    border-radius: 10px 10px 0 0;
+    top: 0;
+}
+
+.cat-ear-left {
+    left: 10px;
+    transform: rotate(-15deg);
+}
+
+.cat-ear-right {
+    right: 10px;
+    transform: rotate(15deg);
+}
+
+.cat-face {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: #fff;
+    border-radius: 50%;
+    top: 15px;
+    left: 5px;
+}
+
+.cat-eye {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #2d2d2d;
+    border-radius: 50%;
+    top: 20px;
+}
+
+.cat-eye-left {
+    left: 12px;
+}
+
+.cat-eye-right {
+    right: 12px;
+}
+
+.cat-pupil {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    top: 4px;
+    left: 4px;
+}
+
+.cat-nose {
+    position: absolute;
+    width: 8px;
+    height: 6px;
+    background: #ffb6c1;
+    border-radius: 50%;
+    top: 38px;
+    left: 31px;
+}
+
+.cat-mouth-left, .cat-mouth-right {
+    position: absolute;
+    width: 10px;
+    height: 8px;
+    border: 2px solid #2d2d2d;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    top: 42px;
+}
+
+.cat-mouth-left {
+    left: 22px;
+    border-right: none;
+}
+
+.cat-mouth-right {
+    right: 22px;
+    border-left: none;
+}
+
+.cat-blush {
+    position: absolute;
+    width: 15px;
+    height: 10px;
+    background: #ffb6c1;
+    border-radius: 50%;
+    opacity: 0.6;
+    top: 35px;
+}
+
+.cat-blush-left {
+    left: 8px;
+}
+
+.cat-blush-right {
+    right: 8px;
+}
+
+.cat-paws {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.cat-paw {
+    width: 20px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.sparkle {
+    position: absolute;
+    font-size: 25px;
+    animation: sparkleAnim 2s infinite;
+}
+
+.sparkle-1 {
+    top: 20px;
+    left: 30px;
+}
+
+.sparkle-2 {
+    top: 30px;
+    right: 40px;
+    animation-delay: 0.5s;
+}
+
+.sparkle-3 {
+    bottom: 120px;
+    left: 20px;
+    animation-delay: 1s;
+}
+
+.sparkle-4 {
+    bottom: 130px;
+    right: 30px;
+    animation-delay: 1.5s;
+}
+
+@keyframes sparkleAnim {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5) rotate(180deg);
+        opacity: 0.5;
+    }
+}
+
+.card-title {
+    color: #fff;
+    font-size: 32px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.card-subtitle {
+    color: #d4a5d9;
+    font-size: 18px;
+}
+
+/* ========== SCREEN 3: SHY BEAR ========== */
+.bear-container {
+    width: 180px;
+    height: 200px;
+    margin: 0 auto 30px;
+    position: relative;
+}
+
+.bear {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.bear-ear {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background: #d4a484;
+    border-radius: 50%;
+    top: 0;
+}
+
+.bear-ear-left {
+    left: 15px;
+}
+
+.bear-ear-right {
+    right: 15px;
+}
+
+.bear-head {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #f5e6d3;
+    border-radius: 50%;
+    top: 20px;
+    left: 40px;
+}
+
+.bear-eye {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #2d2d2d;
+    border-radius: 50%;
+    top: 35px;
+}
+
+.bear-eye-left {
+    left: 20px;
+}
+
+.bear-eye-right {
+    right: 20px;
+}
+
+.bear-pupil {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+}
+
+.bear-tear {
+    position: absolute;
+    width: 8px;
+    height: 12px;
+    background: #87ceeb;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(45deg);
+    left: -5px;
+    top: 12px;
+    opacity: 0.7;
+    animation: tearDrop 2s infinite;
+}
+
+@keyframes tearDrop {
+    0%, 100% {
+        top: 12px;
+        opacity: 0.7;
+    }
+    50% {
+        top: 20px;
+        opacity: 0;
+    }
+}
+
+.bear-nose {
+    position: absolute;
+    width: 12px;
+    height: 10px;
+    background: #2d2d2d;
+    border-radius: 50%;
+    top: 50px;
+    left: 44px;
+}
+
+.bear-mouth {
+    position: absolute;
+    width: 30px;
+    height: 15px;
+    border: 2px solid #2d2d2d;
+    border-top: none;
+    border-radius: 0 0 30px 30px;
+    top: 58px;
+    left: 35px;
+}
+
+.bear-blush {
+    position: absolute;
+    width: 18px;
+    height: 12px;
+    background: #ffb6c1;
+    border-radius: 50%;
+    opacity: 0.6;
+    top: 55px;
+}
+
+.bear-blush-left {
+    left: 10px;
+}
+
+.bear-blush-right {
+    right: 10px;
+}
+
+.bear-body {
+    position: absolute;
+    width: 90px;
+    height: 80px;
+    background: #f5e6d3;
+    border-radius: 50%;
+    top: 110px;
+    left: 45px;
+}
+
+.bear-arm {
+    position: absolute;
+    width: 25px;
+    height: 40px;
+    background: #f5e6d3;
+    border-radius: 10px;
+    top: 10px;
+}
+
+.bear-arm-left {
+    left: -10px;
+    transform: rotate(-20deg);
+}
+
+.bear-arm-right {
+    right: -10px;
+    transform: rotate(20deg);
+}
+
+.letter {
+    position: absolute;
+    font-size: 35px;
+    top: 25px;
+    left: 28px;
+    animation: letterBounce 1.5s infinite;
+}
+
+@keyframes letterBounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* ========== SCREEN 4: TEDDY WITH MESSAGE ========== */
 .teddy-container {
     margin-bottom: 40px;
     animation: float 3s ease-in-out infinite;
@@ -218,18 +652,11 @@ body {
     }
 }
 
-.teddy-bear {
-    width: 180px;
-    height: 180px;
+.teddy-emoji {
+    font-size: 120px;
     filter: drop-shadow(0 0 30px rgba(255, 105, 180, 0.4));
 }
 
-.teddy-fallback {
-    font-size: 100px;
-    filter: drop-shadow(0 0 30px rgba(255, 105, 180, 0.4));
-}
-
-/* Message Section */
 .message-container {
     text-align: center;
     padding: 0 30px;
@@ -261,7 +688,6 @@ body {
     }
 }
 
-/* Tap to Begin Button */
 .tap-button {
     background: linear-gradient(135deg, #c946dd 0%, #8b4f9e 100%);
     border: none;
@@ -271,7 +697,7 @@ body {
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 10px;
     box-shadow: 0 10px 30px rgba(201, 70, 221, 0.4);
@@ -314,7 +740,364 @@ body {
     }
 }
 
-/* Watermark */
+/* ========== SCREEN 5: BALLOONS ========== */
+.balloon-title {
+    color: #ff69b4;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+    padding: 0 20px;
+}
+
+.balloon-subtitle {
+    color: #d4a5d9;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 80px;
+    font-style: italic;
+}
+
+.balloons-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    height: 400px;
+}
+
+.balloon {
+    position: relative;
+    animation: floatUp 4s ease-in forwards;
+}
+
+.balloon-1 {
+    animation-delay: 0.5s;
+}
+
+.balloon-2 {
+    animation-delay: 1.5s;
+}
+
+.balloon-3 {
+    animation-delay: 2.5s;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-300px);
+        opacity: 0.3;
+    }
+}
+
+.balloon-heart {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+    border-radius: 50% 50% 0 50%;
+    transform: rotate(-45deg);
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.balloon-1 .balloon-heart {
+    background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+}
+
+.balloon-2 .balloon-heart {
+    background: linear-gradient(135deg, #ff1493 0%, #c71585 100%);
+    width: 110px;
+    height: 110px;
+    font-size: 22px;
+}
+
+.balloon-3 .balloon-heart {
+    background: linear-gradient(135deg, #db7093 0%, #9370db 100%);
+}
+
+.balloon-heart::before {
+    content: attr(data-text);
+    transform: rotate(45deg);
+}
+
+.balloon-1 .balloon-heart::before {
+    content: 'I';
+}
+
+.balloon-2 .balloon-heart::before {
+    content: 'Love';
+}
+
+.balloon-3 .balloon-heart::before {
+    content: 'You';
+}
+
+.balloon-string {
+    position: absolute;
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent);
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ========== SCREEN 6: CAROUSEL ========== */
+.carousel-title {
+    color: #ff69b4;
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+    padding: 0 20px;
+}
+
+.carousel-subtitle {
+    color: #d4a5d9;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.carousel {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-btn {
+    background: rgba(185, 104, 199, 0.7);
+    border: none;
+    color: white;
+    font-size: 24px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-btn:hover {
+    background: rgba(185, 104, 199, 1);
+    transform: scale(1.1);
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(185, 104, 199, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #b968c7;
+    transform: scale(1.3);
+}
+
+.carousel-note {
+    color: #ff69b4;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.see-message-btn {
+    background: linear-gradient(135deg, #ff69b4 0%, #c946dd 100%);
+    border: none;
+    padding: 18px 50px;
+    border-radius: 50px;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.5);
+    transition: all 0.3s ease;
+}
+
+.see-message-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.7);
+}
+
+/* ========== SCREEN 7: LOVE LETTER ========== */
+.letter-container {
+    background: rgba(139, 69, 152, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 600px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 30px;
+    border: 2px solid rgba(185, 104, 199, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.letter-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.letter-container::-webkit-scrollbar-track {
+    background: rgba(185, 104, 199, 0.1);
+    border-radius: 10px;
+}
+
+.letter-container::-webkit-scrollbar-thumb {
+    background: rgba(185, 104, 199, 0.5);
+    border-radius: 10px;
+}
+
+.letter-content p {
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.letter-highlight {
+    color: #ff69b4;
+    font-weight: bold;
+    font-size: 20px !important;
+}
+
+.proposal-text {
+    color: #ff69b4;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+}
+
+.yes-button {
+    background: linear-gradient(135deg, #ff69b4 0%, #c946dd 100%);
+    border: none;
+    padding: 20px 60px;
+    border-radius: 50px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.5);
+    transition: all 0.3s ease;
+    animation: pulseButton 2s infinite;
+}
+
+@keyframes pulseButton {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.yes-button:hover {
+    transform: scale(1.15);
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.7);
+}
+
+/* ========== SCREEN 8: FINAL HEART ========== */
+#screen8 {
+    background: linear-gradient(135deg, #1a0033 0%, #4a0e4e 100%);
+}
+
+.final-heart {
+    font-size: 150px;
+    filter: drop-shadow(0 0 50px rgba(255, 105, 180, 1));
+    animation: finalHeartbeat 1.5s infinite;
+    margin-bottom: 40px;
+}
+
+@keyframes finalHeartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
+.final-message {
+    color: #ff69b4;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 0 0 30px rgba(255, 105, 180, 0.8);
+}
+
+.final-forever {
+    color: #fff;
+    font-size: 48px;
+    text-align: center;
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+    animation: finalGlow 2s infinite;
+}
+
+@keyframes finalGlow {
+    0%, 100% {
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+    }
+    50% {
+        text-shadow: 0 0 60px rgba(255, 105, 180, 1);
+    }
+}
+
+/* ========== WATERMARK ========== */
 .watermark {
     position: absolute;
     bottom: 20px;
@@ -324,19 +1107,7 @@ body {
     z-index: 10;
 }
 
-/* Sparkles effect */
-@keyframes sparkle {
-    0%, 100% {
-        opacity: 0;
-        transform: scale(0);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Responsive Design */
+/* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 768px) {
     .panda {
         width: 150px;
@@ -350,14 +1121,17 @@ body {
         top: 30px;
     }
     
-    .ear {
-        width: 50px;
-        height: 50px;
-    }
-    
     .loading-text {
         font-size: 22px;
         padding: 0 20px;
+    }
+    
+    .card {
+        padding: 30px 20px;
+    }
+    
+    .card-title {
+        font-size: 26px;
     }
     
     .main-message {
@@ -373,10 +1147,62 @@ body {
         font-size: 18px;
     }
     
-    .teddy-bear,
-    .teddy-fallback {
-        width: 150px;
-        height: 150px;
-        font-size: 80px;
+    .teddy-emoji {
+        font-size: 100px;
+    }
+    
+    .balloon-title {
+        font-size: 22px;
+    }
+    
+    .balloon-heart {
+        width: 80px;
+        height: 80px;
+        font-size: 20px;
+    }
+    
+    .balloon-2 .balloon-heart {
+        width: 90px;
+        height: 90px;
+        font-size: 18px;
+    }
+    
+    .carousel {
+        width: 250px;
+        height: 350px;
+    }
+    
+    .carousel-title {
+        font-size: 20px;
+    }
+    
+    .letter-container {
+        padding: 20px;
+        max-height: 350px;
+    }
+    
+    .letter-content p {
+        font-size: 16px;
+    }
+    
+    .proposal-text {
+        font-size: 22px;
+    }
+    
+    .yes-button {
+        padding: 18px 50px;
+        font-size: 20px;
+    }
+    
+    .final-heart {
+        font-size: 120px;
+    }
+    
+    .final-message {
+        font-size: 26px;
+    }
+    
+    .final-forever {
+        font-size: 38px;
     }
 }

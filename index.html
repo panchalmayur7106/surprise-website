@@ -11,7 +11,7 @@
         <!-- Falling hearts animation -->
         <div class="hearts-container" id="heartsContainer"></div>
         
-        <!-- Screen 1: Panda with loading text -->
+        <!-- Screen 1: Panda with loading -->
         <div class="screen active" id="screen1">
             <div class="panda-container">
                 <div class="panda">
@@ -30,13 +30,88 @@
                 </div>
             </div>
             <h1 class="loading-text">Something special is coming...</h1>
+            <div class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
 
-        <!-- Screen 2: Teddy bear with message -->
+        <!-- Screen 2: Cat in box -->
         <div class="screen" id="screen2">
+            <div class="card">
+                <div class="cat-box">
+                    <div class="box"></div>
+                    <div class="cat">
+                        <div class="cat-head">
+                            <div class="cat-ear cat-ear-left"></div>
+                            <div class="cat-ear cat-ear-right"></div>
+                            <div class="cat-face">
+                                <div class="cat-eye cat-eye-left">
+                                    <div class="cat-pupil"></div>
+                                </div>
+                                <div class="cat-eye cat-eye-right">
+                                    <div class="cat-pupil"></div>
+                                </div>
+                                <div class="cat-nose"></div>
+                                <div class="cat-mouth-left"></div>
+                                <div class="cat-mouth-right"></div>
+                                <div class="cat-blush cat-blush-left"></div>
+                                <div class="cat-blush cat-blush-right"></div>
+                            </div>
+                        </div>
+                        <div class="cat-paws">
+                            <div class="cat-paw cat-paw-left"></div>
+                            <div class="cat-paw cat-paw-right"></div>
+                        </div>
+                    </div>
+                    <div class="sparkle sparkle-1">✨</div>
+                    <div class="sparkle sparkle-2">✨</div>
+                    <div class="sparkle sparkle-3">✨</div>
+                    <div class="sparkle sparkle-4">✨</div>
+                </div>
+                <h2 class="card-title">But this one is special!</h2>
+                <p class="card-subtitle">You need to open it... please?</p>
+            </div>
+        </div>
+
+        <!-- Screen 3: Shy bear -->
+        <div class="screen" id="screen3">
+            <div class="card">
+                <div class="bear-container">
+                    <div class="bear">
+                        <div class="bear-ear bear-ear-left"></div>
+                        <div class="bear-ear bear-ear-right"></div>
+                        <div class="bear-head">
+                            <div class="bear-eye bear-eye-left">
+                                <div class="bear-pupil"></div>
+                                <div class="bear-tear"></div>
+                            </div>
+                            <div class="bear-eye bear-eye-right">
+                                <div class="bear-pupil"></div>
+                                <div class="bear-tear"></div>
+                            </div>
+                            <div class="bear-nose"></div>
+                            <div class="bear-mouth"></div>
+                            <div class="bear-blush bear-blush-left"></div>
+                            <div class="bear-blush bear-blush-right"></div>
+                        </div>
+                        <div class="bear-body">
+                            <div class="bear-arm bear-arm-left"></div>
+                            <div class="bear-arm bear-arm-right"></div>
+                            <div class="letter">💌</div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="card-title">Please say yes!</h2>
+                <p class="card-subtitle">I really hope you do...</p>
+            </div>
+        </div>
+
+        <!-- Screen 4: Teddy with message -->
+        <div class="screen" id="screen4">
             <div class="teddy-container">
-                <img src="https://raw.githubusercontent.com/anujbuilds/romantic-assets/main/teddy-bear.png" alt="Teddy Bear" class="teddy-bear" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-                <div class="teddy-fallback" style="display:none;">🧸💐</div>
+                <div class="teddy-emoji">🧸💐</div>
             </div>
             <div class="message-container">
                 <h2 class="main-message">I have something special to tell you...</h2>
@@ -45,6 +120,80 @@
                     <span class="heart-icon">♥</span> Tap to Begin
                 </button>
             </div>
+        </div>
+
+        <!-- Screen 5: Balloon Animation -->
+        <div class="screen" id="screen5">
+            <h2 class="balloon-title">This is what I wanted to say for so long...</h2>
+            <p class="balloon-subtitle">Watch the balloons carry my message to you</p>
+            <div class="balloons-container">
+                <div class="balloon balloon-1">
+                    <div class="balloon-heart">I</div>
+                    <div class="balloon-string"></div>
+                </div>
+                <div class="balloon balloon-2">
+                    <div class="balloon-heart">Love</div>
+                    <div class="balloon-string"></div>
+                </div>
+                <div class="balloon balloon-3">
+                    <div class="balloon-heart">You</div>
+                    <div class="balloon-string"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 6: Image Carousel -->
+        <div class="screen" id="screen6">
+            <h2 class="carousel-title">From the first day I met you, life became brighter...</h2>
+            <p class="carousel-subtitle">You've made every moment so special 💕</p>
+            <div class="carousel-container">
+                <button class="carousel-btn prev-btn" id="prevBtn">❮</button>
+                <div class="carousel">
+                    <div class="carousel-slide active">
+                        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=800&fit=crop" alt="Couple 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=600&h=800&fit=crop" alt="Couple 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=600&h=800&fit=crop" alt="Couple 3">
+                    </div>
+                </div>
+                <button class="carousel-btn next-btn" id="nextBtn">❯</button>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+            <p class="carousel-note">Now for the most important part...</p>
+            <button class="see-message-btn" id="seeMessageBtn">
+                ♥ See the Message →
+            </button>
+        </div>
+
+        <!-- Screen 7: Love Letter -->
+        <div class="screen" id="screen7">
+            <div class="letter-container">
+                <div class="letter-content">
+                    <p>Every challenge feels easier because I imagine you by my side.</p>
+                    <p>You are not just my friend, you're the most special part of my life.</p>
+                    <p>You make me smile, you make my heart race, and you make me want to be a better version of myself.</p>
+                    <p>I don't know what the future holds, but I know one thing for sure.</p>
+                    <p class="letter-highlight">I want that future with you.</p>
+                </div>
+            </div>
+            <h2 class="proposal-text">So, Will you be mine forever? 💗</h2>
+            <button class="yes-button" id="yesButton">
+                💗 Yes, forever! 💗
+            </button>
+        </div>
+
+        <!-- Screen 8: Final Heart -->
+        <div class="screen" id="screen8">
+            <div class="final-heart">💗</div>
+            <h2 class="final-message">Let's make it worth it...</h2>
+            <h1 class="final-forever">Forever ✨</h1>
         </div>
 
         <!-- Watermark -->
