@@ -1,153 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Special Message 💝</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Just Something Honest</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Scene 1: Floating Clouds -->
-    <div id="scene1" class="scene active">
-        <div class="clouds-container">
-            <div class="cloud cloud1"></div>
-            <div class="cloud cloud2"></div>
-            <div class="cloud cloud3"></div>
-            <div class="cloud cloud4"></div>
-            <div class="cloud cloud5"></div>
-            <div class="cloud cloud6"></div>
-        </div>
-        <button id="enterBtn" class="enter-btn">
-            <span class="heart-icon">💝</span>
-            Enter
-            <span class="heart-icon">💝</span>
-        </button>
-    </div>
 
-    <!-- Scene 2: Beautiful Animation -->
-    <div id="scene2" class="scene">
-        <div class="hearts-animation">
-            <div class="floating-heart" style="left: 10%; animation-delay: 0s;">❤️</div>
-            <div class="floating-heart" style="left: 25%; animation-delay: 0.5s;">💕</div>
-            <div class="floating-heart" style="left: 40%; animation-delay: 1s;">💖</div>
-            <div class="floating-heart" style="left: 55%; animation-delay: 1.5s;">💗</div>
-            <div class="floating-heart" style="left: 70%; animation-delay: 2s;">💓</div>
-            <div class="floating-heart" style="left: 85%; animation-delay: 2.5s;">💝</div>
-        </div>
-        <div class="sparkles">
-            <div class="sparkle" style="top: 20%; left: 15%;">✨</div>
-            <div class="sparkle" style="top: 40%; left: 80%;">✨</div>
-            <div class="sparkle" style="top: 60%; left: 30%;">✨</div>
-            <div class="sparkle" style="top: 80%; left: 70%;">✨</div>
-        </div>
-        <div class="content-box fade-in">
-            <h1 class="romantic-title">Someone Special Wants To Tell You Something...</h1>
-            <div class="rose-divider">🌹 🌹 🌹</div>
-        </div>
-    </div>
+  <div class="viewport" id="viewport">
+    <div class="card" id="card">
+      <p class="text active">
+        Sometimes,<br>
+        a simple moment of curiosity<br>
+        changes the way a day feels.
+      </p>
 
-    <!-- Scene 3: Why You? -->
-    <div id="scene3" class="scene">
-        <div class="question-container">
-            <h2 class="question fade-in-up">Why You?</h2>
-            <div class="answer-box fade-in-delayed">
-                <h3 class="answer-title">Why Not You?</h3>
-                <div class="love-letter">
-                    <p class="letter-line">
-                        <span class="initial-letter">Y</span>ou are the one whose words matter to me more than anything in this world.
-                    </p>
-                    <p class="letter-line">
-                        I haven't seen you once in person, but I feel this incredible connection with you that I can't explain. It's like our souls recognized each other before our eyes ever met.
-                    </p>
-                    <p class="letter-line">
-                        When I heard your voice for the first time... I can't describe how sweet it was. It felt like music to my heart, like a melody I'd been waiting my whole life to hear.
-                    </p>
-                    <p class="letter-line">
-                        From that day, all I want is to hear it once more. Every single day.
-                    </p>
-                    <p class="letter-line">
-                        You make me smile without even trying. Your presence in my life, even from afar, has brought me a happiness I never knew existed.
-                    </p>
-                    <p class="letter-line">
-                        In a world full of people, my heart chose you. Not because you're perfect, but because you're perfectly right for me.
-                    </p>
-                    <p class="letter-line">
-                        Every moment I spend thinking about you is a moment filled with warmth and hope. You've become my favorite thought, my sweetest dream.
-                    </p>
-                </div>
-                <button id="continueBtn1" class="continue-btn">
-                    Continue 💕
-                </button>
-            </div>
-        </div>
-    </div>
+      <p class="text">
+        I didn’t plan this like a speech,<br>
+        or rehearse the words in my head.<br><br>
+        I just let honesty<br>
+        find a quiet place to exist.
+      </p>
 
-    <!-- Scene 4: Interest Check -->
-    <div id="scene4" class="scene">
-        <div class="interest-container">
-            <div class="pulse-heart">💗</div>
-            <h2 class="interest-text fade-in">
-                If you pressed continue...
-            </h2>
-            <p class="interest-subtext fade-in-delayed">
-                It means you're interested in knowing what's in my heart ❤️
-            </p>
-            <div class="butterflies">
-                <span class="butterfly">🦋</span>
-                <span class="butterfly">🦋</span>
-                <span class="butterfly">🦋</span>
-            </div>
-            <button id="continueBtn2" class="continue-btn glow">
-                Yes, Tell Me More 💝
-            </button>
-        </div>
-    </div>
+      <p class="text">
+        You have this rare way<br>
+        of making ordinary moments<br>
+        feel unexpectedly gentle.<br><br>
+        Like calm, without effort.
+      </p>
 
-    <!-- Scene 5: The Promise -->
-    <div id="scene5" class="scene">
-        <div class="promise-container">
-            <div class="stars-bg">
-                <div class="star">⭐</div>
-                <div class="star">⭐</div>
-                <div class="star">⭐</div>
-                <div class="star">⭐</div>
-                <div class="star">⭐</div>
-            </div>
-            <h2 class="promise-title fade-in">All I Ask For...</h2>
-            <div class="promise-box fade-in-up">
-                <p class="promise-text">
-                    <span class="highlight">Just give me one chance</span>
-                </p>
-                <p class="promise-detail">
-                    One chance to prove myself to you.
-                </p>
-                <p class="promise-detail">
-                    One chance to show you how much you mean to me.
-                </p>
-                <p class="promise-detail">
-                    One chance to make you smile every single day.
-                </p>
-                <p class="promise-detail">
-                    One chance to be the reason for your happiness.
-                </p>
-                <div class="final-plea">
-                    <p class="dramatic-text">
-                        If not... then I don't know what I'll do without you.
-                    </p>
-                    <p class="dramatic-text">
-                        My heart only beats for you now. You're my only wish, my only prayer.
-                    </p>
-                    <p class="dramatic-text glow-text">
-                        Whatever you decide, I'll accept. But please know that you'll always be special to me. ✨
-                    </p>
-                </div>
-                <div class="final-hearts">
-                    💕 💖 💗 💓 💝 💘
-                </div>
-            </div>
-        </div>
-    </div>
+      <p class="text">
+        I don’t know when it started,<br>
+        but somewhere between conversations<br>
+        and silences,<br>
+        you began to matter differently.
+      </p>
 
-    <script src="script.js"></script>
+      <p class="text">
+        So before this day passes,<br>
+        before courage changes its mind,<br>
+        there’s something I wish to ask —<br>
+        simply, sincerely.
+      </p>
+
+      <p class="text final">
+        This Valentine’s Day,<br>
+        would you like to be<br>
+        my life-long Valentine?<br><br>
+        <span class="soft">Take your time. This question isn’t in a hurry.</span>
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
