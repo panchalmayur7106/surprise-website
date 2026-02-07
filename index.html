@@ -3,77 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Someone Special</title>
+    <title>Something Just for You!</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Stage 1: Initial Dark Screen with Hearts -->
-    <div class="stage active" id="stage1">
-        <div class="hearts-bg"></div>
-        <div class="content">
-            <p class="intro-text fade-in">कुछ खास है...</p>
-            <p class="tap-hint">Tap anywhere</p>
-        </div>
-    </div>
-
-    <!-- Stage 2: First Shayari -->
-    <div class="stage" id="stage2">
-        <div class="floating-particles"></div>
-        <div class="content">
-            <p class="shayari line-1">तुम्हारी आवाज़ में वो मिठास है,</p>
-            <p class="shayari line-2">जिसे सुनने की हर पल तलाश है।</p>
-            <p class="shayari line-3">पहली बार जब सुना था तुम्हें,</p>
-            <p class="shayari line-4">दिल ने कहा, बस यही एहसास है।</p>
-        </div>
-    </div>
-
-    <!-- Stage 3: Connection -->
-    <div class="stage" id="stage3">
-        <div class="floating-particles"></div>
-        <div class="content">
-            <p class="shayari line-1">मिले नहीं कभी, फिर भी है रिश्ता अजीब,</p>
-            <p class="shayari line-2">रूह से रूह का है ये नसीब।</p>
-            <p class="shayari line-3">तुम्हारी बातें, तुम्हारे अल्फ़ाज़,</p>
-            <p class="shayari line-4">मेरे लिए हैं सबसे करीब।</p>
-        </div>
-    </div>
-
-    <!-- Stage 4: Your Importance -->
-    <div class="stage" id="stage4">
-        <div class="floating-particles"></div>
-        <div class="content">
-            <p class="shayari line-1">दुनिया में बहुत हैं लोग यहाँ,</p>
-            <p class="shayari line-2">पर दिल ने चुना सिर्फ तुम्हें, Madad ji।</p>
-            <p class="shayari line-3">तुम्हारे शब्दों में है वो असर,</p>
-            <p class="shayari line-4">जो बदल दे मेरी हर सुबह को हसीं।</p>
-        </div>
-    </div>
-
-    <!-- Stage 5: The Feeling -->
-    <div class="stage" id="stage5">
-        <div class="floating-particles"></div>
-        <div class="content">
-            <p class="shayari line-1">सोचता हूँ हर वक्त बस तुम्हारे बारे में,</p>
-            <p class="shayari line-2">खुशियों की वजह हो जैसे तुम मेरे प्यारे में।</p>
-            <p class="shayari line-3">न जाने क्यों, पर ये दिल कहता है,</p>
-            <p class="shayari line-4">तुम हो वो जो पूरा करे मेरे सपनों के नारे में।</p>
-        </div>
-    </div>
-
-    <!-- Stage 6: The Question -->
-    <div class="stage" id="stage6">
-        <div class="floating-particles"></div>
-        <div class="content final-stage">
-            <div class="sparkle-container">
-                <span class="sparkle">✦</span>
-                <span class="sparkle">✦</span>
-                <span class="sparkle">✦</span>
+    <div class="container">
+        <!-- Falling hearts animation -->
+        <div class="hearts-container" id="heartsContainer"></div>
+        
+        <!-- Screen 1: Panda with loading text -->
+        <div class="screen active" id="screen1">
+            <div class="panda-container">
+                <div class="panda">
+                    <div class="ear ear-left"></div>
+                    <div class="ear ear-right"></div>
+                    <div class="face">
+                        <div class="eye eye-left">
+                            <div class="pupil"></div>
+                        </div>
+                        <div class="eye eye-right">
+                            <div class="pupil"></div>
+                        </div>
+                        <div class="nose"></div>
+                        <div class="mouth"></div>
+                    </div>
+                </div>
             </div>
-            <p class="question-text">तो Madad ji,</p>
-            <p class="main-question">Will you be my</p>
-            <p class="main-question highlight">Lifelong Valentine?</p>
-            <div class="heart-pulse">♥</div>
+            <h1 class="loading-text">Something special is coming...</h1>
         </div>
+
+        <!-- Screen 2: Teddy bear with message -->
+        <div class="screen" id="screen2">
+            <div class="teddy-container">
+                <img src="https://raw.githubusercontent.com/anujbuilds/romantic-assets/main/teddy-bear.png" alt="Teddy Bear" class="teddy-bear" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+                <div class="teddy-fallback" style="display:none;">🧸💐</div>
+            </div>
+            <div class="message-container">
+                <h2 class="main-message">I have something special to tell you...</h2>
+                <p class="sub-message">Something that will change everything✨</p>
+                <button class="tap-button" id="tapButton">
+                    <span class="heart-icon">♥</span> Tap to Begin
+                </button>
+            </div>
+        </div>
+
+        <!-- Watermark -->
+        <div class="watermark">@anujbuilds</div>
     </div>
 
     <script src="script.js"></script>
